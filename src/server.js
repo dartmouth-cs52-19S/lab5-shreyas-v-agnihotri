@@ -38,10 +38,10 @@ app.use(bodyParser.json());
 
 // additional init stuff should go before hitting the routing
 
-// // default index route
-// app.get('/', (req, res) => {
-//   res.send('hi');
-// });
+// default index route
+app.get('/', (req, res) => {
+  res.send('hi');
+});
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
