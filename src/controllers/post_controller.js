@@ -5,7 +5,7 @@ export const createPost = (req, res) => {
   // All our fields are available in req.body, so let’s set them on the new Post object. You know how to do this.
   post.title = req.body.title;
   post.tags = req.body.tags;
-  post.contents = req.body.contents;
+  post.content = req.body.content;
   post.cover_url = req.body.cover_url;
 
   post.save()
@@ -48,7 +48,7 @@ export const deletePost = (req, res) => {
 };
 
 export const updatePost = (req, res) => {
-  Post.findByIdAndUpdate(req.params.id, req.body)
+  Post.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((result) => {
       res.json(result);
     })
