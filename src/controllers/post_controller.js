@@ -3,7 +3,9 @@ import Post from '../models/post_model';
 export const createPost = (req, res) => {
   const post = new Post();
 
-  post.author = req.user;
+  console.log(req.user);
+
+  post.author = req.user.username;
   post.title = req.body.title;
   post.tags = req.body.tags;
   post.content = req.body.content;
