@@ -2,7 +2,8 @@ import Post from '../models/post_model';
 
 export const createPost = (req, res) => {
   const post = new Post();
-  // All our fields are available in req.body, so let’s set them on the new Post object. You know how to do this.
+
+  post.author = req.user;
   post.title = req.body.title;
   post.tags = req.body.tags;
   post.content = req.body.content;
